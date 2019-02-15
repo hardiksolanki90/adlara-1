@@ -75,4 +75,9 @@ class PageController extends FrontController
         $c = \App\Objects\Component::with('fields')->get();
         return $c;
     }
+
+    public function initProcessPages()
+    {
+        return \App\Objects\Page::all();
+    }
 }

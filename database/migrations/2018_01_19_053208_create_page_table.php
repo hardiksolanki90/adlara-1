@@ -29,16 +29,24 @@ class CreatePageTable extends Migration
             $table->engine = 'InnoDB';
         });
 
-        $data = [
-          'name' => 'Home Page',
-          'content' => 'Hello! Welcome to adlara Application',
-          'url' => '/',
-          'status' => 1,
-          'meta_title' => 'Adlara Application Home page',
-          'meta_description' => 'Adlara Application Home page',
-          'meta_keywords' => 'Adlara, laravel, application'
-        ];
-        \Illuminate\Support\Facades\DB::table('page')->insert($data);
+        $res = curl_request('https://v56.adlara.com/api/pages');
+        $pages = json_decode($res, true);
+
+        if (count($pages)) {
+          foreach ($pages as $page) {
+            \Illuminate\Support\Facades\DB::table('component')->insertGetId($page);
+          }
+        }
+        // $data = [
+        //   'name' => 'Home Page',
+        //   'content' => 'Hello! Welcome to adlara Application',
+        //   'url' => '/',
+        //   'status' => 1,
+        //   'meta_title' => 'Adlara Application Home page',
+        //   'meta_description' => 'Adlara Application Home page',
+        //   'meta_keywords' => 'Adlara, laravel, application'
+        // ];
+        // \Illuminate\Support\Facades\DB::table('page')->insert($data);
     }
 
     /**

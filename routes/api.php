@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('components', 'PageController@initProcessComponents');
+Route::get('pages', 'PageController@initProcessPages');
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
