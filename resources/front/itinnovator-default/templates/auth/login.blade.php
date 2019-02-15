@@ -42,10 +42,10 @@
 
               <div class="field">
                 <button type="submit" v-if="loginFormSubmitLoading" class="ui fluid large teal submit button loading">
-                  Login
+                  {{ t('Login') }}
                 </button>
                 <button type="submit" v-else class="ui fluid large teal submit button">
-                  Login
+                  {{ t('Login') }}
                 </button>
                 <br>
                 <a class="btn btn-link" href="{{ route('register') }}">
@@ -53,7 +53,7 @@
                 </a>
                 <hr>
                 <a class="btn btn-link" href="{{ url('password/reset') }}">
-                  Forgot Your Password?
+                  {{ t('Forgot Your Password?') }}
                 </a>
               </div>
             </div>

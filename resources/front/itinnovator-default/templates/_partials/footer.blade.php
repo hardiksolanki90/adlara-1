@@ -1,43 +1,28 @@
-<footer>
-  <div class="container">
-    <div class="flex space-between">
-      <div class="block">
-        <p>
-          <a href="{{ url('/') }}" class="_fl"><img src="http://jidips.net/storage/media/image/logo2.png"></a>
-        </p>
-        <p>We are offering IELTS Writing & Speaking Evaluation Services Online to many aspirants world-wide.</p>
-        <p class="flex _si">
-          <a href="#"><i class="ion-social-facebook-outline"></i></a>
-          <a href="#"><i class="ion-social-youtube-outline"></i></a>
-          <a href="#"><i class="ion-social-twitter-outline"></i></a>
-          <a href="#"><i class="ion-social-instagram-outline"></i></a>
-        </p>
-      </div>
-      <div class="block">
-        <div class="_he">
-          Get in Touch
+<div class="ui inverted vertical footer segment">
+  <div class="ui container">
+    <div class="ui stackable inverted divided equal height stackable grid">
+      <div class="three wide column">
+        <h4 class="ui inverted header">About</h4>
+        <div class="ui inverted link list">
+          <a href="#" class="item">Sitemap</a>
+          <a href="#" class="item">Contact Us</a>
+          <a href="#" class="item">Religious Ceremonies</a>
+          <a href="#" class="item">Gazebo Plans</a>
         </div>
-        <ul>
-          <li><a href=""><i class="ion-ios-email-outline"></i> ielts@jidips.com</a></li>
-          <li><a href=""><i class="ion-social-youtube-outline"></i> Youtube Channel</a></li>
-          <li><a href=""><i class="ion-social-youtube-outline"></i> About</a></li>
-          <li><a href=""><i class="ion-social-youtube-outline"></i> Contact</a></li>
-        </ul>
       </div>
-      <div class="block">
-        <div class="_he">
-          Links
+      <div class="three wide column">
+        <h4 class="ui inverted header">Services</h4>
+        <div class="ui inverted link list">
+          <a href="#" class="item">Banana Pre-Order</a>
+          <a href="#" class="item">DNA FAQ</a>
+          <a href="#" class="item">How To Access</a>
+          <a href="#" class="item">Favorite X-Men</a>
         </div>
-        <ul>
-          <li><a href="">Packages</li>
-          <li><a href="">IELTS Writing Assessment Service</li>
-          <li><a href="">IELTS Speaking Assessment Service</li>
-          <li><a href="">Terms & Conditions</li>
-          <li><a href="">Privacy Policy</li>
-        </ul>
+      </div>
+      <div class="seven wide column">
+        <h4 class="ui inverted header">Footer Header</h4>
+        <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
       </div>
     </div>
-    <hr>
-    Copyright (c) Jidips 2018. All Rights Reserved.
   </div>
-</footer>
+</div>
