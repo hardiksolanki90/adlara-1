@@ -4,8 +4,9 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-function curl_request($url)
-{
+if (!function_exists('curl_request')) {  
+  function curl_request($url)
+  {
     $curl = curl_init();
     curl_setopt_array($curl, array(
       CURLOPT_RETURNTRANSFER => 1,
@@ -15,14 +16,15 @@ function curl_request($url)
     $resp = curl_exec($curl);
 
     if($errno = curl_errno($curl)) {
-        $error_message = curl_strerror($errno);
-        return $error_message;
+      $error_message = curl_strerror($errno);
+      return $error_message;
     }
 
     // Close request to clear up some resources
     curl_close($curl);
 
     return $resp;
+  }
 }
 
 class CreateComponentTable extends Migration

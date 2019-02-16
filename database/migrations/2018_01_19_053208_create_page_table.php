@@ -3,27 +3,28 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+if (!function_exists('curl_request')) {
+  function curl_request($url)
+  {
+      $curl = curl_init();
+      curl_setopt_array($curl, array(
+        CURLOPT_RETURNTRANSFER => 1,
+        CURLOPT_URL => $url
+      ));
+      // Send the request & save response to $resp
+      $resp = curl_exec($curl);
 
-function curl_request($url)
-{
-    $curl = curl_init();
-    curl_setopt_array($curl, array(
-      CURLOPT_RETURNTRANSFER => 1,
-      CURLOPT_URL => $url
-    ));
-    // Send the request & save response to $resp
-    $resp = curl_exec($curl);
+      if($errno = curl_errno($curl)) {
+          $error_message = curl_strerror($errno);
+          return $error_message;
+      }
 
-    if($errno = curl_errno($curl)) {
-        $error_message = curl_strerror($errno);
-        return $error_message;
-    }
+      // Close request to clear up some resources
+      curl_close($curl);
 
-    // Close request to clear up some resources
-    curl_close($curl);
-
-    return $resp;
-}
+      return $resp;
+  }
+}  
 
 class CreatePageTable extends Migration
 {
