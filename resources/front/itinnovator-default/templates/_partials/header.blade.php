@@ -47,7 +47,7 @@
           <a href="{{ url('login') }}" class="ui inverted button">{{ t('Log in') }}</a>
           <a href="{{ route('register') }}" class="ui inverted button">{{ t('Sign Up') }}</a>
         @endif
-        <a href="https://github.com/itinnovator/adlara" target="_blank" class="ui inverted button">
+        <a href="https://github.com/jigeshraval/adlara" target="_blank" class="ui inverted button">
           <i class="github icon"></i>
           Github
         </a>
